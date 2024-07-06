@@ -120,6 +120,30 @@ background: linear-gradient(90deg, rgba(71,61,60,0) 0%, rgba(77,63,61,0) 20%, rg
                     </div>
                     <!-- FIM MOLHOS -->
 
+                    <!-- TIPO HAMBÚRGUER -->
+                    <div class="row mt-2">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">TIPO DE HAMBÚRGUER</div>
+                                <div class="card-body">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" value="bovino" v-model="inputHamburguer">
+                                        <label class="form-check-label">Bovino</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" value="frango" v-model="inputHamburguer">
+                                        <label class="form-check-label">Frango</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" value="vegetal" v-model="inputHamburguer">
+                                        <label class="form-check-label">Vegetal</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FIM TIPO HAMBÚRGUER -->
+
                 </div>
             </div>
         </div>
@@ -134,6 +158,7 @@ background: linear-gradient(90deg, rgba(71,61,60,0) 0%, rgba(77,63,61,0) 20%, rg
                 inputTipoPao: '',
                 inputSalada: [],
                 inputMolhos: [],
+                inputHamburguer: '',
             },
             computed: { //propriedades computadas// valores reativos
                 pao() {
@@ -172,6 +197,18 @@ background: linear-gradient(90deg, rgba(71,61,60,0) 0%, rgba(77,63,61,0) 20%, rg
                     }
                     return 'imagens/padrao/molho.png'
                 },
+                hamburguer() {
+                    switch(this.inputHamburguer) {
+                        case 'bovino':
+                            return 'imagens/bovino.png'
+                        case 'frango':
+                            return 'imagens/frango.png'
+                        case 'vegetal':
+                            return 'imagens/soja.png'
+                        default:
+                            return 'imagens/padrao/hamburguer.png'
+                    }
+                }
                 
 
             },
